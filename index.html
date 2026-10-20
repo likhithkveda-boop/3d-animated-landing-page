@@ -1,27 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#5b1827">
 <title>In Loving Memory of S. Geetha</title>
 <style>
 :root{--wine:#681e32;--gold:#b58a46;--ink:#3d2630;--cream:#fffaf1}
-*{box-sizing:border-box}html{min-height:100%;background:#f7eee4}body{margin:0;padding:24px 14px;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:radial-gradient(ellipse at top,#fffdf7 0,#f7eee4 65%,#ead8c6 100%);min-height:100vh}
-.page{max-width:780px;margin:0 auto;border:1px solid #c8a56b;padding:clamp(20px,5vw,52px);background:rgba(255,252,246,.96);box-shadow:0 18px 55px #5b18271a;position:relative;text-align:center}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:24px 14px;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:radial-gradient(ellipse at top,#fffdf7,#f7eee4 65%,#ead8c6);min-height:100vh}
+.page{max-width:900px;margin:auto;border:1px solid #c8a56b;padding:clamp(20px,5vw,52px);background:rgba(255,252,246,.97);box-shadow:0 18px 55px #5b18271a;position:relative;text-align:center;overflow:hidden}
 .page:before{content:"";position:absolute;inset:8px;border:1px solid #dfc79d;pointer-events:none}
 .om{font-size:34px;color:var(--gold);margin:4px 0 12px}.eyebrow{font:600 11px/1.7 Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
-h1{font-size:clamp(30px,7vw,52px);line-height:1.1;color:var(--wine);font-weight:normal;margin:12px 0}
-.subtitle{font-size:clamp(17px,3vw,22px);font-style:italic;margin:0 0 20px}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.1;color:var(--wine);font-weight:normal;margin:12px 0}.subtitle{font-size:clamp(17px,3vw,22px);font-style:italic;margin:0 0 20px}
 .ornament{color:var(--gold);letter-spacing:.45em;font-size:17px;margin:20px 0}
-.photo-frame{width:min(100%,330px);margin:22px auto;padding:7px;border:1px solid #c8a56b;background:#fff}
-.photo-placeholder{min-height:150px;display:flex;align-items:center;justify-content:center;padding:22px;background:linear-gradient(135deg,#f4e5d0,#fffaf1);color:#7a5960;font:14px/1.6 Arial,sans-serif}
-.note{max-width:560px;margin:0 auto;font-size:17px;line-height:1.8}
-.name{font-size:34px;color:var(--wine);margin:10px 0}
-.details{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px auto;max-width:560px}
-.detail{border:1px solid #e1cfad;padding:18px 10px;background:#fffdf8}.detail strong{display:block;color:var(--wine);font-size:21px;font-weight:normal;margin-top:7px}.detail span{font:600 10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#947143}
+.name{font-size:34px;color:var(--wine);margin:10px 0}.note{max-width:560px;margin:0 auto;font-size:17px;line-height:1.8}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px auto;max-width:560px}.detail{border:1px solid #e1cfad;padding:18px 10px;background:#fffdf8}.detail span{display:block;font:600 10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#947143}.detail strong{display:block;color:var(--wine);font-size:21px;font-weight:normal;margin-top:7px}
 .venue{line-height:1.7;margin:18px 0 0}.footer{font-style:italic;font-size:16px;line-height:1.8;margin-top:24px}
-@media(max-width:480px){body{padding:10px 8px}.details{grid-template-columns:1fr}.detail{padding:13px}.page{padding:28px 18px}.page:before{inset:5px}}
+.gallery{margin:34px auto 10px;max-width:760px}.gallery h2{color:var(--wine);font-size:clamp(25px,4vw,34px);font-weight:normal;margin:0 0 8px}.gallery-intro{font-size:15px;line-height:1.7;margin:0 auto 18px;max-width:560px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.photo-card{min-height:165px;position:relative;overflow:hidden;border:1px solid #c8a56b;background:linear-gradient(145deg,#f6e8cc,#e8d2ad 45%,#fff8eb);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:16px;box-shadow:0 5px 15px #681e3214;transition:transform .25s,box-shadow .25s;transform-style:preserve-3d}
+.photo-card:before{content:"";position:absolute;inset:7px;border:1px solid #c6a36c;pointer-events:none}
+.photo-card:hover{transform:perspective(650px) rotateY(5deg) rotateX(3deg) translateY(-5px);box-shadow:0 12px 24px #681e3226}
+.photo-card .flower{font-size:32px;color:var(--gold);margin-bottom:8px}.photo-card span{font-size:14px;color:var(--wine);font-style:italic;position:relative}
+.gallery-note{font-size:12px;color:#806a63;line-height:1.6;margin:14px auto 0}
+@media(max-width:560px){body{padding:10px 7px}.page{padding:28px 16px}.details{grid-template-columns:1fr 1fr;gap:8px}.detail{padding:14px 6px}.detail strong{font-size:18px}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.photo-card{min-height:145px;padding:12px}.note{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
 </style>
 </head>
 <body>
@@ -30,19 +32,32 @@ h1{font-size:clamp(30px,7vw,52px);line-height:1.1;color:var(--wine);font-weight:
 <div class="eyebrow">In loving memory</div>
 <h1>First Death Anniversary</h1>
 <p class="subtitle">A prayerful remembrance of our beloved</p>
-<div class="ornament">✦ ❦ ✦</div>
-<div class="photo-frame"><div class="photo-placeholder">With love and remembrance<br><em>Family photograph to be added</em></div></div>
+<div class="ornament">❦ ✧ ❦</div>
 <div class="name">S. Geetha</div>
 <p class="note">With heartfelt love, we remember our beloved Geetha. We humbly invite family and friends to join us in prayers and remembrance, and to bless her soul with your presence.</p>
 <div class="ornament">❦</div>
 <div class="eyebrow">Sunday · 25 October 2026</div>
 <div class="details">
-<div class="detail"><span>Morning pooja</span><strong>8:00 AM</strong></div>
+<div class="detail"><span>Morning Pooja</span><strong>8:00 AM</strong></div>
 <div class="detail"><span>Lunch</span><strong>12:00 PM</strong></div>
 </div>
 <p class="venue"><span class="eyebrow">Venue</span><br><strong>Our Residence</strong><br>Rajahmundry</p>
+<section class="gallery" aria-labelledby="gallery-title">
+<div class="ornament">❦ ✧ ❦</div>
+<div class="eyebrow">Treasured memories</div>
+<h2 id="gallery-title">A Gallery of Love</h2>
+<p class="gallery-intro">Every memory is a blessing; every photograph holds a little piece of forever.</p>
+<div class="gallery-grid">
+<div class="photo-card"><div class="flower">❀</div><span>Forever in our hearts</span></div>
+<div class="photo-card"><div class="flower">❦</div><span>Beautiful memories</span></div>
+<div class="photo-card"><div class="flower">✿</div><span>Love that remains</span></div>
+<div class="photo-card"><div class="flower">❀</div><span>Always remembered</span></div>
+<div class="photo-card"><div class="flower">❦</div><span>Held close, always</span></div>
+<div class="photo-card"><div class="flower">✿</div><span>In loving memory</span></div>
+</div>
+<p class="gallery-note">Gallery layout is now visible on desktop and mobile. The uploaded family photographs still need to be attached to these frames.</p>
+</section>
 <p class="footer">Your presence and prayers will be a treasured tribute to her memory.</p>
 <div class="ornament">ॐ शान्तिः शान्तिः शान्तिः</div>
 </main>
-</body>
-</html>
+</body></html>
