@@ -9,7 +9,7 @@ This adds a genuine model-powered English/Telugu chat API using Cloudflare Worke
    - `npm install -g wrangler`
    - `wrangler login`
    - `wrangler deploy`
-3. `wrangler.toml` binds Workers AI as `env.AI`; no model-provider API key is needed in the website. The selected Qwen model is called server-side. If Cloudflare reports the model is unavailable on your account, select an available multilingual instruct model from the Workers AI catalog and update `MODEL` in `worker.js`.
+3. `wrangler.toml` binds Workers AI as `env.AI`; no model-provider API key is needed in the website. The selected `@cf/zai-org/glm-4.7-flash` model is listed among the models available on Cloudflare Workers AI Free. The model is called server-side. If Cloudflare reports it is unavailable on your account, select an available multilingual instruct model from the Workers AI catalog and update `MODEL` in `worker.js`.
 4. Copy the Worker URL, normally `https://geetha-memorial-ai.<your-subdomain>.workers.dev`.
 5. In `index.html`, replace the empty `AI_API_URL` value with `https://geetha-memorial-ai.<your-subdomain>.workers.dev/chat`, commit, and push. The site will then call the genuine AI API; if it is down, the chatbot falls back to the confirmed event answers.
 6. Test both English and Telugu. Confirm the Worker rejects requests from unapproved origins and that the event date, pooja, lunch, venue and photo count are accurate.

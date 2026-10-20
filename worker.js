@@ -1,5 +1,5 @@
 const ALLOWED_ORIGIN = "https://likhithkveda-boop.github.io";
-const MODEL = "@cf/qwen/qwen2.5-14b-instruct";
+const MODEL = "@cf/zai-org/glm-4.7-flash";
 const EVENT_FACTS = `Confirmed event facts: This is the first death anniversary remembrance for S. Geetha. Date: Sunday, 25 October 2026. Morning pooja: 8:00 AM IST. Lunch: 12:00 PM. Venue: the family's residence in Rajahmundry, Andhra Pradesh, India. A family-provided Google Maps link is https://maps.app.goo.gl/4yqUkjHbmtVqX3X5A. The website contains a memorial photo gallery with 24 photographs. Do not invent a street address, travel route, rituals, contacts, or additional event details.`;
 const hits = new Map();
 function json(data, status, origin) {
