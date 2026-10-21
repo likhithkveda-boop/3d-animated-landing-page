@@ -186,6 +186,47 @@ body.world-open{overflow:hidden}body.world-open .page{filter:blur(3px);transform
 /* Keep only the memorial chat button as a persistent floating side control. */
 #memory-hud,#memory-chapters,#memory-world-launch{display:none!important}
 </style>
+
+<style id="mobile-optimization-layer">
+/* Mobile-first polish: safe areas, readable type, touch-friendly controls, and no sideways scrolling. */
+html{width:100%;max-width:100%;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:14px;scroll-behavior:smooth}
+body{width:100%;max-width:100%;min-width:0;overflow-x:clip;padding:clamp(4px,2vw,12px);padding-left:max(clamp(4px,2vw,12px),env(safe-area-inset-left));padding-right:max(clamp(4px,2vw,12px),env(safe-area-inset-right))}
+img,video,canvas,svg{max-width:100%}img{height:auto}button,a,[role="button"],input,select,textarea{touch-action:manipulation}button,.btn,[role="button"]{min-height:44px}a{overflow-wrap:anywhere}p,li{overflow-wrap:break-word} .page{width:100%;max-width:1000px;min-width:0;margin:clamp(4px,2vw,12px) auto;padding:clamp(16px,4.8vw,52px);border-radius:clamp(8px,2vw,16px)}
+@media(max-width:700px){
+  body{font-size:16px;line-height:1.65}
+  .page{padding:clamp(16px,4.5vw,28px) clamp(12px,3.5vw,22px);box-shadow:0 8px 26px #57132118}
+  h1{font-size:clamp(28px,8vw,44px);line-height:1.12;overflow-wrap:anywhere}
+  h2{font-size:clamp(23px,6vw,32px);line-height:1.2}
+  h3{line-height:1.25}
+  .name{font-size:clamp(32px,9vw,48px);line-height:1.12;margin:14px 0}
+  .eyebrow{font-size:10px;letter-spacing:.14em;line-height:1.6}
+  p{line-height:1.75}
+  .rule{margin:18px auto}
+  .gallery{width:100%;margin:30px auto}
+  .gallery h2{font-size:clamp(25px,7vw,34px)}
+  .roadmap{gap:10px 6px}
+  .memory{min-width:0;overflow:hidden}
+  .memory img{width:100%;max-width:100%;object-fit:cover}
+  .btn,button.btn{width:100%;max-width:100%;white-space:normal;line-height:1.35;padding:12px 14px}
+  .actions,.button-row,.controls,.toolbar{max-width:100%;flex-wrap:wrap;gap:10px}
+  input,select,textarea{max-width:100%;font-size:16px}
+  dialog{max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto}
+  [role="dialog"],.modal,.lightbox,.chat-panel,.chat-window{max-width:calc(100vw - 20px);max-height:calc(100dvh - 20px);overflow:auto;overscroll-behavior:contain}
+  #event-chat-launcher.chat-launcher--icon-only{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;max-width:52px!important;max-height:52px!important;right:max(12px,env(safe-area-inset-right))!important;bottom:max(12px,env(safe-area-inset-bottom))!important}
+}
+@media(max-width:420px){
+  body{padding:4px;padding-left:max(4px,env(safe-area-inset-left));padding-right:max(4px,env(safe-area-inset-right))}
+  .page{padding:16px 11px;border-width:1px}
+  .eyebrow{letter-spacing:.1em}
+  .roadmap{grid-template-columns:minmax(0,1fr) 28px;gap:9px 5px}
+  .roadmap:before{right:12px}
+  .marker{width:26px;height:26px}
+  .memory{padding:5px}
+  .memory img{height:clamp(140px,52vw,210px)}
+  #event-chat-launcher.chat-launcher--icon-only{width:50px!important;height:50px!important;min-width:50px!important;min-height:50px!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
 </head><body>
 <div id="memory-progress" aria-hidden="true"></div>
 <nav id="memory-hud" aria-label="Memorial quick controls">
