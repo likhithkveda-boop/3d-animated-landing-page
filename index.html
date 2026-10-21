@@ -136,6 +136,16 @@ body .page .diya-section h2,body .page .diya-section p{color:inherit}
 @media(max-width:560px){.nextgen-invitation-links{grid-template-columns:minmax(0,1fr)}.nextgen-invitation-card{padding:12px}}
 </style>
 
+
+<style id="bottom-gallery-three-column-fix">
+/* Keep the bottom memory gallery in three clear columns on desktop/tablet. */
+body .page .extra-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;align-items:start!important}
+body .page .extra-gallery-grid .extra-photo{width:100%!important;min-width:0!important}
+body .page .extra-gallery-grid .extra-photo img{width:100%!important;max-width:100%!important;aspect-ratio:4/5!important;height:auto!important;object-fit:cover!important}
+@media(max-width:560px){body .page .extra-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}body .page .extra-gallery-grid .extra-photo{padding:4px!important}body .page .extra-gallery-grid .extra-photo .caption{font-size:11px!important;line-height:1.3!important;padding:6px 1px!important;overflow-wrap:anywhere!important}body .page .extra-gallery-grid .extra-photo img{aspect-ratio:3/4!important}}
+@media(max-width:340px){body .page .extra-gallery-grid{gap:4px!important}body .page .extra-gallery-grid .extra-photo{padding:3px!important}body .page .extra-gallery-grid .extra-photo .caption{font-size:10px!important}}
+</style>
+
 </head><body>
 <div class="cinematic-intro" id="cinematic-intro" role="dialog" aria-label="Memorial welcome"><div class="intro-glow"></div><div class="intro-ornament">✦</div><p class="intro-kicker">A LIFE REMEMBERED · A LOVE THAT REMAINS</p><h1>In Loving Memory</h1><div class="intro-name">S. Geetha</div><p class="intro-verse">Forever loved. Forever remembered.</p><button class="enter-button" id="enter-tribute" type="button">Enter with Love <span>✧</span></button><p class="intro-hint">A quiet moment of remembrance</p></div>
 <div id="cinematic-atmosphere" aria-hidden="true"></div>
