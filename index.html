@@ -234,6 +234,34 @@ img:not(.hero-portrait){display:none!important;visibility:hidden!important}
 .page .gallery,.page .extra-gallery,.page .roadmap,.page .extra-gallery-grid,.page .remembrance-tools,.page .memory-card-maker,.nextgen-qr-card,#memory-world,#memory-world-launch,.slideshow-launch,.slideshow-modal,.slideshow-overlay,.photo-gallery,.gallery-controls{display:none!important;visibility:hidden!important}
 #world-orbit-photos img,.world-portrait,.memory-card-preview canvas{display:none!important}
 </style>
+
+<style id="geetha-scroll-light-atmosphere">
+:root{--memory-progress:0;--scene-darkness:0;--scene-warmth:0}
+body{background:#fff9ee;transition:background-color 1.8s ease,color 1.2s ease}
+#cinematic-atmosphere{background:linear-gradient(135deg,#fffaf0 0%,#f7e8d0 35%,#c28c72 70%,#421321 100%);background-size:170% 170%;transition:filter 1.8s ease,opacity 1.8s ease}
+#cinematic-atmosphere::before{background:radial-gradient(ellipse at 20% 15%,rgba(255,244,201,.92),transparent 46%),radial-gradient(ellipse at 80% 70%,rgba(203,143,112,.48),transparent 42%);filter:blur(45px);transition:opacity 1.8s ease,transform .4s ease}
+#cinematic-atmosphere::after{background:radial-gradient(ellipse at 60% 45%,rgba(66,19,33,.76),transparent 58%),linear-gradient(180deg,rgba(255,247,223,0),rgba(30,8,17,.45));opacity:0;transition:opacity 1.8s ease}
+body.memorial-evening #cinematic-atmosphere::before{opacity:.23}
+body.memorial-evening #cinematic-atmosphere::after{opacity:1}
+body.memorial-evening{background:#190b12!important}
+body.memorial-evening .page{background:linear-gradient(145deg,#f5e8d5f2,#d8b79ad9)!important;box-shadow:0 20px 90px #0008,0 0 80px #e1ad5a14!important}
+body.memorial-evening .tribute-section,body.memorial-evening .family-letter{background:linear-gradient(145deg,#f5e8d5ed,#dac0a6e8)!important}
+body.diya-lit #cinematic-atmosphere::after{opacity:1;background:radial-gradient(ellipse at 50% 68%,rgba(255,157,36,.25),transparent 17%),radial-gradient(ellipse at 50% 58%,rgba(56,10,25,.6),transparent 58%),linear-gradient(180deg,rgba(15,5,12,.16),rgba(12,4,10,.83))}
+#cinematic-atmosphere{transform:translate3d(0,0,0);will-change:background-position,filter}
+.page>.portrait-wrap,.page>.tribute-section,.page>.family-letter,.page>.diya-section,.page>.cinematic-ending{transition:transform .75s cubic-bezier(.2,.7,.2,1),filter 1.2s ease,box-shadow 1.2s ease}
+.page>.portrait-wrap{transform:translate3d(0,calc(var(--scroll-parallax,0)*-.012px),0)}
+.page>.tribute-section,.page>.family-letter{transform:translate3d(0,calc(var(--scroll-parallax,0)*-.008px),0)}
+.diya-section.lit{box-shadow:0 0 0 1px #d7ad62,0 0 45px #ff9d242d,0 18px 65px #18060e55!important;transition:box-shadow 1s ease,background 1s ease}
+.diya-section.lit .diya-visual{filter:drop-shadow(0 0 18px #ff9d24a0)}
+.diya-match-sparks{position:absolute;z-index:8;left:50%;top:22%;width:1px;height:1px;pointer-events:none}
+.diya-match-sparks i{position:absolute;width:4px;height:12px;border-radius:99px;background:linear-gradient(#fff9b5,#ff8b24);box-shadow:0 0 10px #ffb52e;animation:match-spark .72s ease-out forwards;transform:rotate(var(--spark-angle)) translateY(-8px);opacity:0}
+@keyframes match-spark{0%{opacity:0;transform:rotate(var(--spark-angle)) translateY(0) scale(.6)}18%{opacity:1}100%{opacity:0;transform:rotate(var(--spark-angle)) translateY(var(--spark-distance)) scale(.1)}}
+.diya-section.lit .diya-flame{animation:flame-flicker 1.4s ease-in-out infinite alternate,future-flame .72s ease-in-out infinite alternate,ceremony-flame 1.25s ease-in-out infinite alternate!important;filter:drop-shadow(0 0 8px #fff0a6) drop-shadow(0 0 22px #ff9f1c) drop-shadow(0 0 42px #ff6a00)}
+@keyframes ceremony-flame{0%{border-radius:70% 30% 65% 35%;opacity:.94}50%{border-radius:48% 52% 40% 60%;opacity:1}100%{border-radius:35% 65% 58% 42%;opacity:.91}}
+.diya-section.lit .diya-bowl{box-shadow:0 0 18px #ff9d2433,0 8px 20px #9d6b2b35}
+@media(max-width:700px){.page>.portrait-wrap,.page>.tribute-section,.page>.family-letter,.page>.diya-section,.page>.cinematic-ending{transform:none!important}#cinematic-atmosphere::before{filter:blur(28px)}}
+@media(prefers-reduced-motion:reduce){#cinematic-atmosphere,#cinematic-atmosphere::before,#cinematic-atmosphere::after,body,.page,.page *{transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important}.diya-match-sparks{display:none!important}}
+</style>
 </head><body>
 <div id="memory-progress" aria-hidden="true"></div>
 <nav id="memory-hud" aria-label="Memorial quick controls">
@@ -428,4 +456,18 @@ img:not(.hero-portrait){display:none!important;visibility:hidden!important}
  const progress=$('memory-progress');function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%';}window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
  if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id||entry.target.classList[0];let key=entry.target.id||'top';if(entry.target.matches('.cinematic-intro'))key='top';if(entry.target.matches('.diya-section'))key='diya-heading';chapters.forEach(b=>b.setAttribute('aria-current',String(b.dataset.chapter===key)));}}),{threshold:.22});['.cinematic-intro','#gallery-top','#family-tribute','.diya-section','#cinematic-ending'].forEach(sel=>{const el=document.querySelector(sel);if(el)observer.observe(el);});}
 })();
-</script></body></html>
+</script><script id="geetha-light-ceremony-controller">
+(()=>{
+ const root=document.body,html=document.documentElement,atmosphere=document.getElementById('cinematic-atmosphere');
+ const diya=document.getElementById('light-diya'),section=document.querySelector('.diya-section'),thanks=document.getElementById('diya-thanks');
+ const reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+ let audioCtx=null, litOnce=false, lastY=0, ticking=false;
+ function audio(){try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume();return audioCtx}catch(_){return null}}
+ function strike(){const c=audio();if(!c)return;const t=c.currentTime;try{const n=Math.floor(c.sampleRate*.19),buf=c.createBuffer(1,n,c.sampleRate),d=buf.getChannelData(0);for(let i=0;i<n;i++){const decay=Math.pow(1-i/n,3.1);d[i]=(Math.random()*2-1)*decay*(.8+.2*Math.sin(i*.11))}const noise=c.createBufferSource();noise.buffer=buf;const filter=c.createBiquadFilter();filter.type='bandpass';filter.frequency.value=2100;filter.Q.value=.7;const gain=c.createGain();gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.22,t+.008);gain.gain.exponentialRampToValueAtTime(.0001,t+.19);noise.connect(filter);filter.connect(gain);gain.connect(c.destination);noise.start(t);noise.stop(t+.2);const osc=c.createOscillator(),og=c.createGain();osc.type='triangle';osc.frequency.setValueAtTime(1500,t);osc.frequency.exponentialRampToValueAtTime(520,t+.095);og.gain.setValueAtTime(.0001,t);og.gain.exponentialRampToValueAtTime(.10,t+.005);og.gain.exponentialRampToValueAtTime(.0001,t+.11);osc.connect(og);og.connect(c.destination);osc.start(t);osc.stop(t+.12)}catch(_){}}
+ function sparks(){if(!section||reduce)return;const v=section.querySelector('.diya-visual');if(!v)return;const old=v.querySelector('.diya-match-sparks');if(old)old.remove();const wrap=document.createElement('span');wrap.className='diya-match-sparks';wrap.setAttribute('aria-hidden','true');for(let i=0;i<14;i++){const s=document.createElement('i');const angle=(i*360/14)+(Math.random()*16-8);s.style.setProperty('--spark-angle',angle+'deg');s.style.setProperty('--spark-distance',(-28-Math.random()*48)+'px');s.style.animationDelay=(Math.random()*.12)+'s';wrap.appendChild(s)}v.appendChild(wrap);setTimeout(()=>wrap.remove(),1050)}
+ function scrollScene(){const y=window.scrollY||0;const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);const progress=Math.max(0,Math.min(1,y/max));html.style.setProperty('--memory-progress',progress.toFixed(3));if(atmosphere){const warmth=Math.min(1,progress*1.18);atmosphere.style.backgroundPosition=(50+Math.sin(y*.0015)*11)+'% '+(50+progress*42)+'%';atmosphere.style.filter='saturate('+(1+warmth*.28)+') brightness('+(1-progress*.25-(root.classList.contains('diya-lit')?.12:0))+')';atmosphere.style.setProperty('--parallax-y',(y*.12)+'px');atmosphere.style.setProperty('--parallax-x',(Math.sin(y*.001)*18)+'px')}root.classList.toggle('memorial-evening',progress>.18||root.classList.contains('diya-lit')); if(progress>.18)root.classList.add('memorial-scroll-started');if(y>lastY&&y>60)root.classList.add('memorial-scroll-started');lastY=y;ticking=false}
+ window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(scrollScene)}},{passive:true});window.addEventListener('resize',scrollScene,{passive:true});scrollScene();
+ if(diya&&section){diya.addEventListener('click',()=>{if(diya.getAttribute('aria-pressed')!=='true'){audio();strike();sparks();root.classList.add('diya-lit','memorial-evening');litOnce=true}else{root.classList.remove('diya-lit')}},{capture:true});}
+})();
+</script>
+</body></html>
