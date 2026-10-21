@@ -182,6 +182,9 @@ body.world-open{overflow:hidden}body.world-open .page{filter:blur(3px);transform
 @media(max-width:640px){#memory-hud{top:10px;right:10px;padding:5px}#memory-hud button,#memory-hud a{padding:9px 10px;font-size:10px}#memory-chapters{left:6px;padding:5px;border-radius:18px;gap:2px}#memory-chapters button{padding:8px 5px}#memory-chapters button span{display:none}#memory-world-launch{right:12px;bottom:12px;padding:12px 14px}.world-core{top:45%;width:62vw;min-width:220px}.world-hint{top:12%;width:80%;line-height:1.7}.world-photo-node{width:clamp(58px,16vw,88px)}.world-title{margin-top:13px}.world-title p{font-size:11px}.world-controls{bottom:12px;gap:6px}.world-controls button{padding:10px 11px;font-size:9px}#world-memory-note{bottom:72px}}
 @media(prefers-reduced-motion:reduce){.world-ring,.world-portrait,.world-photo-node{animation:none!important;transition:none!important}.world-open .page{transition:none!important}}
 
+
+/* Keep only the memorial chat button as a persistent floating side control. */
+#memory-hud,#memory-chapters,#memory-world-launch{display:none!important}
 </style>
 </head><body>
 <div id="memory-progress" aria-hidden="true"></div>
