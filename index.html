@@ -24,6 +24,21 @@ html body button#event-chat-launcher.chat-launcher--icon-only .chat-icon{display
 html body #event-chat{z-index:2147483646!important}
 @media(max-width:480px){html body button#event-chat-launcher.chat-launcher--icon-only{inset:auto max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) auto!important;width:52px!important;height:52px!important;min-width:52px!important;max-width:52px!important;min-height:52px!important;max-height:52px!important}}
 </style>
+<style id="layout-overlap-fix">
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{overflow-wrap:anywhere}
+.page{width:min(100%,1000px);margin-inline:auto;min-width:0}
+.page h1,.page h2,.page h3,.page p,.page .name,.page .detail,.page .caption,.page .road-label{max-width:100%;overflow-wrap:anywhere;word-break:normal}
+.page h1,.page .name,.page .detail,.page .actions,.page .gallery h2{transform:none!important}
+.page img{max-width:100%;height:auto}
+.roadmap,.extra-gallery-grid,.gallery,.extra-gallery,.tribute-section,.diya-section{min-width:0;max-width:100%}
+.memory,.extra-photo{min-width:0;max-width:100%;overflow:hidden}
+.memory img,.extra-photo img{display:block;width:100%;max-width:100%;object-fit:cover}
+.caption{line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:620px){.page{width:100%;padding:22px 12px}.page h1{font-size:clamp(26px,7vw,38px);line-height:1.18}.page .name{font-size:clamp(28px,8vw,42px);line-height:1.2}.page .detail{line-height:1.65}.gallery h2,.extra-gallery h2{font-size:clamp(24px,6vw,32px);line-height:1.25}.roadmap{grid-template-columns:minmax(0,1fr) 30px!important;gap:12px 7px}.memory img{height:clamp(135px,42vw,205px)!important}.memory .caption,.extra-photo .caption{padding:8px 3px;font-size:13px;line-height:1.4}.tribute-section,.diya-section{padding:22px 12px;margin:22px auto}.intro-copy{line-height:1.65;overflow-wrap:anywhere}}
+@media(max-width:380px){.page{padding:18px 9px}.roadmap{grid-template-columns:minmax(0,1fr) 26px!important;gap:10px 5px}.memory{padding:4px}.memory img{height:130px!important}.memory .caption,.extra-photo .caption{font-size:12px}}
+</style>
 </head><body>
 <div class="cinematic-intro" id="cinematic-intro" role="dialog" aria-label="Memorial welcome"><div class="intro-glow"></div><div class="intro-ornament">✦</div><p class="intro-kicker">A LIFE REMEMBERED · A LOVE THAT REMAINS</p><h1>In Loving Memory</h1><div class="intro-name">S. Geetha</div><p class="intro-verse">Forever loved. Forever remembered.</p><button class="enter-button" id="enter-tribute" type="button">Enter with Love <span>✧</span></button><p class="intro-hint">A quiet moment of remembrance</p></div>
 <div class="ambient-backdrop" aria-hidden="true"><span class="temple-silhouette"></span><span class="gold-dust dust-one"></span><span class="gold-dust dust-two"></span><span class="gold-dust dust-three"></span></div><main class="page"><div class="eyebrow">In loving memory</div>
