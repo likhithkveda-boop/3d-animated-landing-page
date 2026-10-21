@@ -227,6 +227,13 @@ img,video,canvas,svg{max-width:100%}img{height:auto}button,a,[role="button"],inp
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
+
+<style id="cover-photo-only">
+/* Keep only the main cover portrait; suppress every other photo and photo gallery. */
+img:not(.hero-portrait){display:none!important;visibility:hidden!important}
+.page .gallery,.page .extra-gallery,.page .roadmap,.page .extra-gallery-grid,.page .remembrance-tools,.page .memory-card-maker,.nextgen-qr-card,#memory-world,#memory-world-launch,.slideshow-launch,.slideshow-modal,.slideshow-overlay,.photo-gallery,.gallery-controls{display:none!important;visibility:hidden!important}
+#world-orbit-photos img,.world-portrait,.memory-card-preview canvas{display:none!important}
+</style>
 </head><body>
 <div id="memory-progress" aria-hidden="true"></div>
 <nav id="memory-hud" aria-label="Memorial quick controls">
